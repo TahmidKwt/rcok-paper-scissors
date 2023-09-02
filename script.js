@@ -51,7 +51,9 @@ function gameEnd() {
 
         if (computerScore === 5) {
 
-		document.getElementById("game-result").textContent = "Computer is the Winner!";	
+		document.getElementById("game-result").textContent = "Computer is the Winner!";
+		document.getElementById("game-rule").textContent = "Game Over!";
+
 		document.querySelector(".rock-btn").disabled = true;
 		document.querySelector(".paper-btn").disabled = true;
 		document.querySelector(".scissors-btn").disabled = true;
@@ -59,6 +61,8 @@ function gameEnd() {
 	} else if (playerScore === 5) {
 
 		document.getElementById("game-result").textContent = "You are the Winner!";
+		document.getElementById("game-rule").textContent = "Game Over!";
+
 		document.querySelector(".rock-btn").disabled = true;
 		document.querySelector(".paper-btn").disabled = true;
 		document.querySelector(".scissors-btn").disabled = true;
