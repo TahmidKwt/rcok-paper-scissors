@@ -1,16 +1,9 @@
-let rock = document.querySelector(".rock-btn");
-let paper = document.querySelector(".paper-btn");
-let scissors = document.querySelector(".scissors-btn");
-let result = document.querySelector(".round-result");
-let winner = document.querySelector(".game-result");
-let pscore = document.querySelector(".player-score");
-let cscore = document.querySelector(".computer-score");
-let reset = document.querySelector(".reset-btn");
 let rule = document.getElementById("game-rule");
 
-rock.addEventListener("click", () => playRound("ROCK"));
-paper.addEventListener("click", () => playRound("PAPER"));
-scissors.addEventListener("click", () => playRound("SCISSORS"));
+document.querySelector(".rock-btn").addEventListener("click", () => playRound("ROCK"));
+document.querySelector(".paper-btn").addEventListener("click", () => playRound("PAPER"));
+document.querySelector(".scissors-btn").addEventListener("click", () => playRound("SCISSORS"));
+document.querySelector(".reset-btn").addEventListener("click", () => resetGame());
 
 function getComputerChoice() {
 
@@ -26,47 +19,67 @@ let computerScore = 0;
 function playRound(playerSelection) {
   
 	let computerSelection = getComputerChoice();
+	document.getElementById("comp-choice").textContent = `${computerSelection}`;
+	document.getElementById("player-choice").textContent = `${playerSelection}`;
   
 	if (playerSelection === computerSelection) {
     
-		result.innerHTML = "Result: It's a tie.";
+		document.getElementById("round-result").textContent = "It's a tie.";
     
 	} else if ((playerSelection === "ROCK" && computerSelection === "PAPER") || (playerSelection === "PAPER" && computerSelection === "SCISSORS") || (playerSelection === "SCISSORS" && computerSelection === "ROCK")) {
     
-		result.textContent = `Result: You lose! ${computerSelection} beats ${playerSelection}`;
+		document.getElementById("round-result").textContent = `You lose! ${computerSelection} beats ${playerSelection}`;
 		computerScore++;
-		cscore.textContent = `Computer Score: ${computerScore}`;
+		document.getElementById("comp-score").textContent = `${computerScore}`;
   
 	} else if ((playerSelection === "ROCK" && computerSelection === "SCISSORS") || (playerSelection === "PAPER" && computerSelection === "ROCK") || (playerSelection === "SCISSORS" && computerSelection === "PAPER")) {
     
-		result.textContent = `Result: You win! ${playerSelection} beats ${computerSelection}`;
+		document.getElementById("round-result").textContent = `You win! ${playerSelection} beats ${computerSelection}`;
 		playerScore++;
-		pscore.textContent = `Player Score: ${playerScore}`;
+		document.getElementById("player-score").textContent = `${playerScore}`;
   
 	}
+
+	gameEnd();
   
-	if ((computerScore === 5) || (playerScore === 5)) {
-	  
-		gameEnd();
-	}
 }
+
+document.querySelector(".rock-btn").disbled = false;
+document.querySelector(".paper-btn").disabled = false;
+document.querySelector(".scissors-btn").disabled = false;
 
 function gameEnd() {
 
-	rule.style.display = "none";
-	result.style.display = "hiddden";
-
         if (computerScore === 5) {
-		winner.textContent = "Game Over! Computer is the Winner!" 
+
+		document.getElementById("game-result").textContent = "Computer is the Winner!";	
+		document.querySelector(".rock-btn").disbled = true;
+		document.querySelector(".paper-btn").disabled = true;
+		document.querySelector(".scissors-btn").disabled = true;
+
 	} else if (playerScore === 5) {
-		winner.textContent = "Game Over! You are the Winner!";
+
+		document.getElementById("game-result").textContent = "You are the Winner!";
+		document.querySelector(".rock-btn").disbled = false;
+		document.querySelector(".paper-btn").disabled = false;
+		document.querySelector(".scissors-btn").disabled = false;
+
 	}
+
+}
+
+gameEnd();
+
+function resetGame() {
 
 	playerScore = 0;
 	computerScore = 0;
 
-	pscore.textContent = `Player Score: ${playerScore}`;
-	cscore.textContent = `Computer Score: ${computerScore}`;
-}
+	document.getElementById("player-score").textContent = `${playerScore}`;
+	document.getElementById("comp-score").textContent = `${computerScore}`;
    
-reset.addEventListener("click", gameEnd);
+	document.querySelector(".rock-btn").disbled = false;
+	document.querySelector(".paper-btn").disabled = false;
+	document.querySelector(".scissors-btn").disabled = false;
+
+}
