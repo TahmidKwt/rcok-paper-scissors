@@ -18,8 +18,8 @@ let computerScore = 0;
 function playRound(playerSelection) {
   
 	let computerSelection = getComputerChoice();
-	document.getElementById("comp-choice").textContent = ` ${computerSelection} `;
-	document.getElementById("player-choice").textContent = ` ${playerSelection} `;
+	document.getElementById("comp-choice").textContent = `${computerSelection}`;
+	document.getElementById("player-choice").textContent = `${playerSelection}`;
   
 	if (playerSelection === computerSelection) {
     
@@ -29,13 +29,13 @@ function playRound(playerSelection) {
     
 		document.getElementById("round-result").textContent = `You lose! ${computerSelection} beats ${playerSelection}`;
 		computerScore++;
-		document.getElementById("comp-score").textContent = ` ${computerScore} `;
+		document.getElementById("comp-score").textContent = `${computerScore}`;
   
 	} else if ((playerSelection === "ROCK" && computerSelection === "SCISSORS") || (playerSelection === "PAPER" && computerSelection === "ROCK") || (playerSelection === "SCISSORS" && computerSelection === "PAPER")) {
     
 		document.getElementById("round-result").textContent = `You win! ${playerSelection} beats ${computerSelection}`;
 		playerScore++;
-		document.getElementById("player-score").textContent = ` ${playerScore} `;
+		document.getElementById("player-score").textContent = `${playerScore}`;
   
 	}
 
@@ -73,11 +73,15 @@ function resetGame() {
 
 	playerScore = 0;
 	computerScore = 0;
-
 	document.getElementById("player-score").textContent = `${playerScore}`;
 	document.getElementById("comp-score").textContent = `${computerScore}`;
    
-	document.querySelector(".rock-btn").disbled = false;
+	document.getElementById("comp-choice").textContent = "";
+	document.getElementById("player-choice").textContent = "";	
+	document.getElementById("game-result").textContent = "Result has not been determined yet.";	
+	document.getElementById("round-result").textContent = "Result has not been determined yet.";
+	
+	document.querySelector(".rock-btn").disabled = false;
 	document.querySelector(".paper-btn").disabled = false;
 	document.querySelector(".scissors-btn").disabled = false;
 
