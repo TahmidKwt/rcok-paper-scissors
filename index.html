@@ -11,19 +11,24 @@
 	<body>
 		<div class"container">
 
+			<div class="choice-box">
+				<div>You Picked: <span id="player-choice"> </span></div>
+				<div> Computer Picked: <span id="comp-choice"> </span></div>
+				<div>Round Result: <span id="round-result">Make a Choice</span></div>
+			</div>
+
+			<div class="score-box">
+				<div>Player Score: <span id="player-score">0</span>/5</div>
+				<div>Computer Score: <span id="comp-score">0</span>/5</div>
+				<div class="game-result"> </div>
+			</div>
+
 			<div class="buttons">
 				<button class="rock-btn">ROCK</button>
 				<button class="paper-btn">PAPER</button>
 				<button class="scissors-btn">SCISSORS</button>                        
 			</div>
     
-			<div class"text-box">
-				<div class="round-result">Result: </div>
-				<div class="computer-score">Computer Score: 0</div>
-				<div class="player-score">Player Score: 0</div>
-				<div class="game-result"></div>
-			</div>
-
 			<div>			
 				<button class="reset-btn">Reset Game</button>
 				<p id="game-rule">Game Ends at Five Wins</p>
