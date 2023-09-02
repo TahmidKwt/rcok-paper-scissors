@@ -1,4 +1,3 @@
-let rule = document.getElementById("game-rule");
 
 document.querySelector(".rock-btn").addEventListener("click", () => playRound("ROCK"));
 document.querySelector(".paper-btn").addEventListener("click", () => playRound("PAPER"));
@@ -19,8 +18,8 @@ let computerScore = 0;
 function playRound(playerSelection) {
   
 	let computerSelection = getComputerChoice();
-	document.getElementById("comp-choice").textContent = `${computerSelection}`;
-	document.getElementById("player-choice").textContent = `${playerSelection}`;
+	document.getElementById("comp-choice").textContent = ` ${computerSelection} `;
+	document.getElementById("player-choice").textContent = ` ${playerSelection} `;
   
 	if (playerSelection === computerSelection) {
     
@@ -30,13 +29,13 @@ function playRound(playerSelection) {
     
 		document.getElementById("round-result").textContent = `You lose! ${computerSelection} beats ${playerSelection}`;
 		computerScore++;
-		document.getElementById("comp-score").textContent = `${computerScore}`;
+		document.getElementById("comp-score").textContent = ` ${computerScore} `;
   
 	} else if ((playerSelection === "ROCK" && computerSelection === "SCISSORS") || (playerSelection === "PAPER" && computerSelection === "ROCK") || (playerSelection === "SCISSORS" && computerSelection === "PAPER")) {
     
 		document.getElementById("round-result").textContent = `You win! ${playerSelection} beats ${computerSelection}`;
 		playerScore++;
-		document.getElementById("player-score").textContent = `${playerScore}`;
+		document.getElementById("player-score").textContent = ` ${playerScore} `;
   
 	}
 
@@ -44,7 +43,7 @@ function playRound(playerSelection) {
   
 }
 
-document.querySelector(".rock-btn").disbled = false;
+document.querySelector(".rock-btn").disabled = false;
 document.querySelector(".paper-btn").disabled = false;
 document.querySelector(".scissors-btn").disabled = false;
 
@@ -53,14 +52,14 @@ function gameEnd() {
         if (computerScore === 5) {
 
 		document.getElementById("game-result").textContent = "Computer is the Winner!";	
-		document.querySelector(".rock-btn").disbled = true;
+		document.querySelector(".rock-btn").disabled = true;
 		document.querySelector(".paper-btn").disabled = true;
 		document.querySelector(".scissors-btn").disabled = true;
 
 	} else if (playerScore === 5) {
 
 		document.getElementById("game-result").textContent = "You are the Winner!";
-		document.querySelector(".rock-btn").disbled = true;
+		document.querySelector(".rock-btn").disabled = true;
 		document.querySelector(".paper-btn").disabled = true;
 		document.querySelector(".scissors-btn").disabled = true;
 
