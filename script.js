@@ -60,9 +60,9 @@ function gameEnd() {
 	} else if (playerScore === 5) {
 
 		document.getElementById("game-result").textContent = "You are the Winner!";
-		document.querySelector(".rock-btn").disbled = false;
-		document.querySelector(".paper-btn").disabled = false;
-		document.querySelector(".scissors-btn").disabled = false;
+		document.querySelector(".rock-btn").disbled = true;
+		document.querySelector(".paper-btn").disabled = true;
+		document.querySelector(".scissors-btn").disabled = true;
 
 	}
 
