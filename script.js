@@ -84,6 +84,7 @@ function resetGame() {
 	document.getElementById("player-choice").textContent = "";	
 	document.getElementById("game-result").textContent = "Result has not been determined yet.";	
 	document.getElementById("round-result").textContent = "Result has not been determined yet.";
+	document.getElementById("game-rule").textContent = "Game Ends at Five Wins";
 	
 	document.querySelector(".rock-btn").disabled = false;
 	document.querySelector(".paper-btn").disabled = false;

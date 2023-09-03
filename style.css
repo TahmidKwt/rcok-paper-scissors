@@ -1,3 +1,4 @@
+*
 * {
 	margin: 0;
 	padding: 0;
@@ -14,7 +15,8 @@ h1 {
 	font-size: 48px;
 }
 
-.choice-box {
+.choice-box,
+.score-box {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -26,13 +28,13 @@ h1 {
 	font-weight: bold;
 }
 
-.choice-sec {
+.choice-sec,
+.score-sec {
 	display: flex;
 	flex-direction: column;
 	padding: 24px;
 	margin: 0 48px;
 	gap: 24px;
-	border: 5px solid black;
 }
 
 .container {
@@ -41,14 +43,30 @@ h1 {
 	border: 5px solid blue;
 }
 
-.round-text {
+.round-text,
+.game-text,
+#game-rule {
 	text-align: center;
 	font-size: 24px;
 	font-weight: bold;
+}
 
+.buttons {
+	padding:32px;
+	display: flex;
+	justify-content: center;
+	gap: 48px;
+}
 
-.round-text {
-	text-align: center;
-	font-size: 24px;
-	font-weight: bold;
+button {
+	padding: 18px;
+	border-radius: 8px;
+}
+
+.end-sec {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 24px;
+	gap: 24px;
 }
