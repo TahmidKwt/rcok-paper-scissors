@@ -1,1 +1,1 @@
-# rcok-paper-scissors
+# https://tahmidkwt.github.io/rock-paper-scissors/
