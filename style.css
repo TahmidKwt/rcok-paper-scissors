@@ -7,12 +7,14 @@
 
 body {
 	background-color: #e3f2e5;
+	width: 100%;
 }
 
 h1 {
 	text-align: center;
 	padding: 24px;
 	font-size: 48px;
+	width: 100%;
 }
 
 .choice-box,
@@ -26,6 +28,7 @@ h1 {
 	background-color: #F8F0F0;
 	font-size: 24px;
 	font-weight: bold;
+	min-width: 75%;
 }
 
 .choice-sec,
@@ -35,6 +38,7 @@ h1 {
 	padding: 24px;
 	margin: 0 48px;
 	gap: 24px;
+	min-width: 75%;
 }
 
 .container {
@@ -60,6 +64,7 @@ h1 {
 button {
 	padding: 18px;
 	border-radius: 8px;
+	background-color: #F8F0F0;
 }
 
 .end-sec {
@@ -68,4 +73,9 @@ button {
 	align-items: center;
 	padding: 24px;
 	gap: 24px;
+}
+
+.reset-btn {
+	color: #F8F0F0;
+	background-color: black;
 }
